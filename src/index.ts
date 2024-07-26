@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync, writeFile, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { argv } from 'node:process'
 import kebabCase from 'lodash.kebabcase'
 import startCase from 'lodash.startcase'
@@ -22,7 +22,7 @@ const kebabedName = kebabCase(componentName)
 
 
 const main = async () => {
-  const dirPath = await makeContainingDir(targetPath, kebabedName)
+  const dirPath = await makeContainingDir(kebabedName)
   if (!dirPath) {
     console.error('Error creating directory')
     process.exit(1)
