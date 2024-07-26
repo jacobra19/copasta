@@ -1,14 +1,21 @@
 [
   {
+    "emoji": "⚛️",
     "fileExtension": "tsx",
     "content": "import React from 'react'\n\nexport const ComponentName = () => {\n  return <div>ComponentName</div>\n}"
   },
   {
+    "emoji": "💅",
     "fileExtension": "scss",
     "content": ".ComponentName {\n  color: red;\n}"
   },
   {
     "fileExtension": "data-hooks.ts",
     "content": "export enum ComponentNameDataHooks {\n  Root = 'FileName-root'\n}"
+  },
+  {
+    "emoji": "🧪",
+    "fileExtension": "test.ts",
+    "content": "describe('ComponentName', () => {\ntest('should pass', () => {\nexpect(true).toBe(true);\n});\n});\n"
   }
 ]
