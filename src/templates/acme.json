@@ -1,0 +1,14 @@
+[
+  {
+    "fileExtension": "tsx",
+    "content": "import React from 'react'\n\nexport const ComponentName = () => {\n  return <div>ComponentName</div>\n}"
+  },
+  {
+    "fileExtension": "scss",
+    "content": ".ComponentName {\n  color: red;\n}"
+  },
+  {
+    "fileExtension": "data-hooks.ts",
+    "content": "export enum ComponentDataHooks {\n  Root = 'component-root'\n}"
+  }
+]
