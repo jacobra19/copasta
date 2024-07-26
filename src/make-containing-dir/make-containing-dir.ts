@@ -1,4 +1,5 @@
 import { mkdir } from "fs/promises"
+import { ErrorsMessages } from "../errors-messages"
 
 export const makeContainingDir = async (exeFilePath: string, dirName: string): Promise<string | void> => {
   // removes the file name from the path
@@ -8,6 +9,8 @@ export const makeContainingDir = async (exeFilePath: string, dirName: string): P
     await mkdir(dirPath)
     return dirPath
   } catch (err) {
-    console.error(err)
+    console.error(ErrorsMessages.MakingDirError, err)
+    process.exit(1)
+
   }
 }
