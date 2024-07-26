@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { writeFileSync } from 'node:fs'
-import { argv, features } from 'node:process'
+import { argv, cwd, features } from 'node:process'
 import kebabCase from 'lodash.kebabcase'
 import startCase from 'lodash.startcase'
 import { makeContainingDir } from './make-containing-dir/make-containing-dir'
@@ -16,6 +16,9 @@ const componentName = argv[2]
 
 isDebug && console.log('__dirname', __dirname)
 isDebug && console.log('__filename', __filename)
+isDebug && console.log('cwd()', cwd())
+isDebug && console.log('features', features)
+
 
 if (!componentName) {
   console.error(ErrorsMessages.MissingComponentName)
