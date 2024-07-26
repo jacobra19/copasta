@@ -10,7 +10,6 @@ import { ErrorsMessages } from './errors-messages'
 console.log('argv', argv)
 
 const componentName = argv[2]
-const targetPath = argv[1]
 
 if (!componentName) {
   console.error(ErrorsMessages.MissingComponentName)

@@ -4,6 +4,7 @@ import { argv, cwd } from 'node:process'
 
 export const makeContainingDir = async (dirName: string): Promise<string | void> => {
   const dirPath = `${cwd()}/${dirName}`
+  console.log('dirPath', dirPath)
   try {
     await mkdir(dirPath)
     return dirPath
