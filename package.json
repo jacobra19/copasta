@@ -1,0 +1,44 @@
+{
+  "name": "copasta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node ./src/index.ts",
+    "dev:watch": "nodemon ./src/index.ts",
+    "test": "node --test",
+    "test:watch": "node --test --watch"
+  },
+  "devDependencies": {
+    "@types/lodash.kebabcase": "^4.1.9",
+    "@types/lodash.startcase": "^4.4.9",
+    "@types/node": "^20.14.11",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "bin": {
+    "copasta": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobra19/copasta.git"
+  },
+  "keywords": [
+    "boilerplate"
+  ],
+  "author": {
+    "name": "Yakov Rakhamimov",
+    "email": "jacobra19@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacobra19/copasta/issues"
+  },
+  "homepage": "https://github.com/jacobra19/copasta#readme",
+  "dependencies": {
+    "lodash.kebabcase": "^4.1.1",
+    "lodash.startcase": "^4.4.0"
+  }
+}
