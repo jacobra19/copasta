@@ -2,7 +2,11 @@ import { mkdir } from "fs/promises"
 import { ErrorsMessages } from "../errors-messages"
 import { cwd } from "process"
 
+
+
 export const makeContainingDir = async (dirName: string): Promise<string | void> => {
+  console.log('makeContainingDir cwd()', cwd())
+
   const dirPath = `${cwd()}/${dirName}`
   console.log('dirPath', dirPath)
   try {

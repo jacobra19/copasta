@@ -9,15 +9,13 @@ import { ErrorsMessages } from './errors-messages'
 
 console.log('argv', argv)
 
-const isDebug = argv.includes('--debug')
-
 const componentName = argv[2]
 
 
-isDebug && console.log('__dirname', __dirname)
-isDebug && console.log('__filename', __filename)
-isDebug && console.log('cwd()', cwd())
-isDebug && console.log('features', features)
+console.log('__dirname', __dirname)
+console.log('__filename', __filename)
+console.log('root cwd()', cwd())
+console.log('features', features)
 
 
 if (!componentName) {
@@ -31,7 +29,6 @@ const kebabedName = kebabCase(componentName)
 
 const main = async () => {
   const dirPath = await makeContainingDir(kebabedName)
-  isDebug && console.log('dirPath', dirPath)
   if (!dirPath) {
     console.error('Error creating directory')
     process.exit(1)
