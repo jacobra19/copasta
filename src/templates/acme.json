@@ -9,6 +9,6 @@
   },
   {
     "fileExtension": "data-hooks.ts",
-    "content": "export enum ComponentDataHooks {\n  Root = 'component-root'\n}"
+    "content": "export enum ComponentNameDataHooks {\n  Root = 'FileName-root'\n}"
   }
 ]
