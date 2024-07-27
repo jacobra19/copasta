@@ -16,6 +16,6 @@
   {
     "emoji": "🧪",
     "fileExtension": "test.ts",
-    "content": "describe('ComponentName', () => {\ntest('should pass', () => {\nexpect(true).toBe(true);\n});\n});\n"
+    "content": "describe('ComponentName', () => {\n  test('should pass', () => {\n    expect(true).toBe(true);\n  });\n});\n"
   }
 ]
