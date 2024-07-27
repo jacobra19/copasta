@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npm ci && tsc",
+    "build": "npm ci && rm -rf dist && tsc",
     "dev": "ts-node ./src/index.ts",
     "dev:watch": "nodemon ./src/index.ts",
     "test": "node --test",
