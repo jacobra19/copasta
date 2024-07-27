@@ -1,10 +1,10 @@
 {
   "name": "copasta",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npm ci && tsc",
     "dev": "ts-node ./src/index.ts",
     "dev:watch": "nodemon ./src/index.ts",
     "test": "node --test",
