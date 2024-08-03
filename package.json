@@ -1,6 +1,6 @@
 {
   "name": "copasta",
-  "version": "1.2.10",
+  "version": "1.2.11",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "@types/lodash.kebabcase": "^4.1.9",
     "@types/lodash.startcase": "^4.4.9",
     "@types/node": "^20.14.11",
+    "@types/prompts": "^2.4.9",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
@@ -39,6 +40,7 @@
   "homepage": "https://github.com/jacobra19/copasta#readme",
   "dependencies": {
     "lodash.kebabcase": "^4.1.1",
-    "lodash.startcase": "^4.4.0"
+    "lodash.startcase": "^4.4.0",
+    "prompts": "^2.4.2"
   }
 }

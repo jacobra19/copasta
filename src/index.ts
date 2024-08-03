@@ -7,6 +7,8 @@ import startCase from 'lodash.startcase'
 import { makeContainingDir } from './make-containing-dir/make-containing-dir'
 import templates from './templates/acme.json'
 import { ErrorsMessages } from './errors-messages'
+import { promptTemplates } from './prompt-templates/prompt-templates'
+
 
 (async function () {
   console.log('copasta initiated 🧑‍✈️🍝\n')
@@ -29,7 +31,9 @@ import { ErrorsMessages } from './errors-messages'
     process.exit(1)
   }
 
-  templates.forEach(async ({ content: rawContent, fileExtension, emoji }) => {
+  const selectedTemplates = await promptTemplates(templates)
+
+  selectedTemplates.forEach(async ({ content: rawContent, fileExtension, emoji }) => {
     const fileName = `${kebabedName}.${fileExtension}`
     const filePath = `${dirPath}/${fileName}`
     const content = rawContent.replace(/ComponentName/g, capitalizedName).replace(/FileName/g, kebabedName)
