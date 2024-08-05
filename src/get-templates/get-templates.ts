@@ -1,5 +1,13 @@
-import templates from '../templates/acme.json'
+import defaultTemplates from '../templates/acme.json'
+import { readFile } from 'fs/promises'
+import { getConfig } from '../get-config/get-config'
 
-export const getTemplates = () => {
-  return templates
+export const getTemplates = async () => {
+  const config = await getConfig()
+
+  if (!config?.templatesLocalPath) {
+    return defaultTemplates
+  }
+
+  return JSON.parse(await readFile(config.templatesLocalPath, 'utf-8'))
 }

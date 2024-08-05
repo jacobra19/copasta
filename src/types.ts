@@ -3,3 +3,7 @@ export interface Template {
   fileExtension: string,
   content: string
 }
+
+export interface Config {
+  templatesLocalPath?: string
+}
