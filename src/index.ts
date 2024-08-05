@@ -7,7 +7,6 @@ import { generateFiles } from './generate-files/generate-files'
 import { parseNames } from './parse-names/parse-names'
 import { getTemplates } from './get-templates/get-templates'
 
-
 (async function () {
   console.log('copasta initiated 🧑‍✈️🍝\n')
 
@@ -15,9 +14,9 @@ import { getTemplates } from './get-templates/get-templates'
 
   const dirPath = await makeContainingDir(kebabedName)
 
-  const templates = getTemplates()
+  const templates = await getTemplates()
 
   const selectedTemplates = await promptTemplates(templates)
 
-  await generateFiles({ capitalizedName, dirPath, kebabedName, templates: selectedTemplates })
+  generateFiles({ capitalizedName, dirPath, kebabedName, templates: selectedTemplates })
 }());
