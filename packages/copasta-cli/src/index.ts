@@ -17,9 +17,7 @@ import { getConfig } from './get-config/get-config'
 
   const templates = await getTemplates(config)
 
-  const dirPath = await makeContainingDir(kebabedName)
-
   const selectedTemplates = await promptTemplates(templates)
 
-  generateFiles({ capitalizedName, dirPath, kebabedName, templates: selectedTemplates })
+  await generateFiles({ capitalizedName, kebabedName, templates: selectedTemplates })
 }());
