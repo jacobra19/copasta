@@ -1,6 +1,6 @@
 {
   "name": "copasta",
-  "version": "1.2.15",
+  "version": "1.2.16",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm ci && rm -rf dist && tsc",
@@ -25,7 +25,22 @@
   "bin": {
     "copasta": "dist/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobra19/copasta.git"
+  },
+  "keywords": [
+    "boilerplate"
+  ],
+  "author": {
+    "name": "Yakov Rakhamimov",
+    "email": "jacobra19@gmail.com"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacobra19/copasta/issues"
+  },
+  "homepage": "https://github.com/jacobra19/copasta#readme",
   "copasta": {
     "templatesLocalPath": "./src/templates/custom-templates.json"
   }
