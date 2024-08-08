@@ -5,5 +5,5 @@ export interface Template {
 }
 
 export interface Config {
-  templatesLocalPath?: string
+  templates?: Template[]
 }
