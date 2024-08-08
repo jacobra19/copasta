@@ -1,15 +1,9 @@
-import { findUp } from "find-up"
-import { readFile } from "fs/promises"
 import { Config } from "../types"
+import { cosmiconfig } from 'cosmiconfig'
 
 export const getConfig = async (): Promise<Config | undefined> => {
-  const nearestPackageJsonPath = await findUp('package.json', { type: 'file' })
+  const { search } = cosmiconfig('copasta');
+  const result = await search()
 
-  if (!nearestPackageJsonPath) {
-    return undefined
-  }
-
-  const nearestPackageJson = await readFile(nearestPackageJsonPath, 'utf-8')
-
-  return JSON.parse(nearestPackageJson).copasta
+  return result?.config
 }
