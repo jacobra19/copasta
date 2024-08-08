@@ -1,25 +1,10 @@
 {
-  "name": "copasta",
-  "version": "1.2.14",
-  "description": "",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "npm ci && rm -rf dist && tsc",
-    "dev": "tsx ./src/index.ts",
-    "test": "node --test",
-    "test:watch": "node --test --watch"
-  },
-  "devDependencies": {
-    "@types/lodash.kebabcase": "^4.1.9",
-    "@types/lodash.startcase": "^4.4.9",
-    "@types/node": "^20.14.11",
-    "@types/prompts": "^2.4.9",
-    "tsx": "^4.16.5",
-    "typescript": "^5.5.3"
-  },
-  "bin": {
-    "copasta": "dist/index.js"
-  },
+  "name": "copasta-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jacobra19/copasta.git"
@@ -35,14 +20,5 @@
   "bugs": {
     "url": "https://github.com/jacobra19/copasta/issues"
   },
-  "homepage": "https://github.com/jacobra19/copasta#readme",
-  "dependencies": {
-    "find-up": "^7.0.0",
-    "lodash.kebabcase": "^4.1.1",
-    "lodash.startcase": "^4.4.0",
-    "prompts": "^2.4.2"
-  },
-  "copasta": {
-    "templatesLocalPath": "./src/templates/custom-templates.json"
-  }
+  "homepage": "https://github.com/jacobra19/copasta#readme"
 }
