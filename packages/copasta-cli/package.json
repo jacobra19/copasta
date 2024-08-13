@@ -1,6 +1,6 @@
 {
   "name": "copasta",
-  "version": "1.2.18",
+  "version": "1.2.19",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm ci && rm -rf dist && tsc",
