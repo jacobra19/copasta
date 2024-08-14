@@ -1,6 +1,6 @@
 {
   "name": "copasta",
-  "version": "1.2.20",
+  "version": "1.2.21",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm ci && rm -rf dist && tsc",
@@ -9,7 +9,7 @@
     "test:watch": "node --test --watch"
   },
   "dependencies": {
-    "chalk": "^5.3.0",
+    "chalk": "^4",
     "cosmiconfig": "^9.0.0",
     "lodash.kebabcase": "^4.1.1",
     "lodash.startcase": "^4.4.0",
