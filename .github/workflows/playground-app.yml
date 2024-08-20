@@ -36,13 +36,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'yarn'
       - name: Install dependencies
-        run: npm ci
+        run: yarn install
       - name: Build project
         run: |
           cd packages/playground-app
-          npm run build
+          yarn build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact

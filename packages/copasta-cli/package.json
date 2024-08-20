@@ -23,9 +23,7 @@
     "tsx": "^4.16.5",
     "typescript": "^5.5.3"
   },
-  "bin": {
-    "copasta": "dist/index.js"
-  },
+  "bin": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jacobra19/copasta.git"
