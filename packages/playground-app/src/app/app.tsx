@@ -1,6 +1,8 @@
 import '@mantine/core/styles.css';
 import { createTheme, MantineProvider, AppShell } from '@mantine/core';
 import { Header } from './header/header';
+import { Main } from './main/main';
+import { PlaygroundContextProvider } from './main/playground.context';
 
 const theme = createTheme({
   /** Put your mantine theme override here */
@@ -11,7 +13,9 @@ export const App = () => {
     <MantineProvider theme={theme}>
       <AppShell header={{ height: 80 }} padding='md'>
         <Header />
-        <AppShell.Main>Main</AppShell.Main>
+        <PlaygroundContextProvider>
+          <Main />
+        </PlaygroundContextProvider>
       </AppShell>
     </MantineProvider>
   );
