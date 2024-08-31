@@ -1,15 +1,15 @@
 import {
   AppShell,
   Button,
-  Code,
+  // Code,
   Flex,
-  Input,
-  JsonInput,
-  Select,
-  TagsInput,
-  Text,
+  // Input,
+  // JsonInput,
+  // Select,
+  // TagsInput,
+  // Text,
 } from '@mantine/core';
-import Editor from '@monaco-editor/react';
+// import Editor from '@monaco-editor/react';
 import { TemplateSettingsToolbar } from './template-settings-toolbar/template-settings-toolbar';
 import { usePlaygroundContext } from './playground.context';
 

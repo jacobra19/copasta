@@ -1,8 +1,8 @@
 import '@mantine/core/styles.css';
 import { createTheme, MantineProvider, AppShell } from '@mantine/core';
 import { Header } from './header/header';
-import { Main } from './main/main';
-import { PlaygroundContextProvider } from './main/playground.context';
+import { Main } from './playground/playground';
+import { PlaygroundContextProvider } from './playground/playground.context';
 
 const theme = createTheme({
   /** Put your mantine theme override here */
