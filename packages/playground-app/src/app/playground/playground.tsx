@@ -12,17 +12,19 @@ import {
 // import Editor from '@monaco-editor/react';
 import { TemplateSettingsToolbar } from './template-settings-toolbar/template-settings-toolbar';
 import { usePlaygroundContext } from './playground.context';
+import { JsonPreview } from './json-preview/json-preview';
 
 export const Main = () => {
   const { editorLanguage, moduleName } = usePlaygroundContext();
 
   return (
     <AppShell.Main>
-      <Flex gap={'lg'}>
+      <Flex gap={'lg'} h={'calc(100vh - 112px)'}>
         <Flex
           flex={1}
           direction={'column'}
           style={{ border: '1px solid grey' }}
+          justify={'space-between'}
         >
           <TemplateSettingsToolbar />
           <pre>{JSON.stringify(editorLanguage, null, 2)}</pre>
@@ -80,13 +82,11 @@ export const Main = () => {
           </Code>
         </Flex>
       </Flex> */}
-          <Flex align={'flex-end'}>
+          <Flex align={'flex-end'} justify={'flex-end'}>
             <Button>Add Template</Button>
           </Flex>
         </Flex>
-        <Flex flex={1} style={{ border: '1px solid grey' }}>
-          preview
-        </Flex>
+        <JsonPreview />
       </Flex>
     </AppShell.Main>
   );
