@@ -2,20 +2,20 @@
   {
     "emoji": "⚛️",
     "fileExtension": "tsx",
-    "content": "import React from 'react'\n\nexport const ComponentName = () => {\n  return <div>ComponentName</div>\n}"
+    "content": "import React from 'react'\n\nexport const <CapitalizedName> = () => {\n  return <div><CapitalizedName></div>\n}"
   },
   {
     "emoji": "💅",
     "fileExtension": "scss",
-    "content": ".ComponentName {\n  color: red;\n}"
+    "content": ".<CapitalizedName> {\n  color: red;\n}"
   },
   {
     "fileExtension": "data-hooks.ts",
-    "content": "export enum ComponentNameDataHooks {\n  Root = 'FileName-root'\n}"
+    "content": "export enum ComponentNameDataHooks {\n  Root = '<KebabedName>-root'\n}"
   },
   {
     "emoji": "🧪",
     "fileExtension": "test.ts",
-    "content": "describe('ComponentName', () => {\n  test('should pass', () => {\n    expect(true).toBe(true);\n  });\n});\n"
+    "content": "describe('<CapitalizedName>', () => {\n  test('should pass', () => {\n    expect(true).toBe(true);\n  });\n});\n"
   }
 ]

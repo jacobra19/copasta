@@ -1,6 +1,7 @@
 import { writeFileSync } from 'node:fs'
 import { Template } from "../types";
 import { makeContainingDir } from '../make-containing-dir/make-containing-dir';
+import { parseContent } from '../parse-content/parse-content';
 
 interface GenerateFilesOptions {
   templates: Template[]
@@ -14,7 +15,7 @@ export const generateFiles = async ({ capitalizedName, kebabedName, templates }:
   templates.forEach(({ content: rawContent, fileExtension, emoji }) => {
     const fileName = `${kebabedName}.${fileExtension}`
     const filePath = `${dirPath}/${fileName}`
-    const content = rawContent.replace(/ComponentName/g, capitalizedName).replace(/FileName/g, kebabedName)
+    const content = parseContent(rawContent,capitalizedName,kebabedName)
 
     try {
       writeFileSync(filePath, content)
