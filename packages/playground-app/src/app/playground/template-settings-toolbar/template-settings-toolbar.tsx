@@ -1,4 +1,4 @@
-import { Code, Flex, Input, Select } from '@mantine/core';
+import { Flex, Input, Select } from '@mantine/core';
 import { usePlaygroundContext } from '../playground.context';
 import { useMemo } from 'react';
 
