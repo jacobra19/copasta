@@ -1,6 +1,9 @@
 import { createContext, FC, useContext, useState } from 'react';
 import { languages as _languages } from 'monaco-editor';
 import type { languages as TLanguages } from 'monaco-editor';
+import { Config, Template } from '../../types';
+import { parseContent } from '../../utils/parse-content';
+import { parseModuleName } from '../../utils/parse-module-name';
 
 type ILanguageExtensionPoint = TLanguages.ILanguageExtensionPoint;
 
@@ -30,6 +33,11 @@ interface PlaygroundContextStore {
   selectedExtension: string;
   moduleName: string;
   languages: ILanguageExtensionPoint[];
+  handleEditorValueChange: (value: string) => void;
+  handleConfigPreviewChange: (config: Config) => void;
+  editorValue: string;
+  configPreview: Config;
+  handleAddTemplate: () => void;
 }
 const PlaygroundContext = createContext<PlaygroundContextStore>(
   {} as PlaygroundContextStore
@@ -43,7 +51,7 @@ export const PlaygroundContextProvider: FC<IPlaygroundContextProviderProps> = ({
   children,
 }) => {
   const [editorLanguageId, setEditorLanguageId] = useState<string>(
-    languagesIds[0]
+    languagesIds.find((id) => id === 'typescript') ?? languagesIds[0]
   );
 
   const [moduleName, setModuleName] = useState<string>('hello-world');
@@ -53,6 +61,12 @@ export const PlaygroundContextProvider: FC<IPlaygroundContextProviderProps> = ({
 
   const [selectedExtension, setSelectedExtension] = useState<string>(
     editorLanguage?.extensions![0] ?? ''
+  );
+
+  const [configPreview, setConfigPreview] = useState<Config>({});
+
+  const [editorValue, setEditorValue] = useState<string>(
+    'const HelloWorld = () => {\n    \n}'
   );
 
   const handleEditorLanguageIdChange = (languageId: string) => {
@@ -70,6 +84,30 @@ export const PlaygroundContextProvider: FC<IPlaygroundContextProviderProps> = ({
     setSelectedExtension(extension);
   };
 
+  const handleEditorValueChange = (value: string) => {
+    setEditorValue(value);
+  };
+
+  const handleConfigPreviewChange = (config: Config) => {
+    setConfigPreview(config);
+  };
+
+  const handleAddTemplate = () => {
+    const { capitalizedName, kebabedName } = parseModuleName(moduleName);
+
+    const template: Template = {
+      fileExtension: selectedExtension,
+      content: parseContent(editorValue, capitalizedName, kebabedName),
+    };
+    console.log('template', template);
+    const templates = configPreview.templates ?? [];
+
+    handleConfigPreviewChange({
+      ...configPreview,
+      templates: [...templates, template],
+    });
+  };
+
   return (
     <PlaygroundContext.Provider
       value={{
@@ -80,6 +118,11 @@ export const PlaygroundContextProvider: FC<IPlaygroundContextProviderProps> = ({
         handleModuleNameChange,
         moduleName,
         languages: languages,
+        handleEditorValueChange,
+        handleConfigPreviewChange,
+        editorValue,
+        configPreview,
+        handleAddTemplate,
       }}
     >
       {children}

@@ -1,4 +1,4 @@
-import { Flex, Input, Select } from '@mantine/core';
+import { Code, Flex, Input, Select } from '@mantine/core';
 import { usePlaygroundContext } from '../playground.context';
 import { useMemo } from 'react';
 
@@ -31,7 +31,6 @@ export const TemplateSettingsToolbar = () => {
     [editorLanguage.extensions]
   );
 
-  console.log('TemplateSettingsToolbar editorLanguage', editorLanguage);
   return (
     <Flex gap={'md'}>
       <Select

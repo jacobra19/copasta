@@ -9,84 +9,48 @@ import {
   // TagsInput,
   // Text,
 } from '@mantine/core';
-// import Editor from '@monaco-editor/react';
+import Editor from '@monaco-editor/react';
 import { TemplateSettingsToolbar } from './template-settings-toolbar/template-settings-toolbar';
 import { usePlaygroundContext } from './playground.context';
-import { JsonPreview } from './json-preview/json-preview';
+import { ConfigPreview } from './config-preview/config-preview';
+import { ModuleNameTip } from './module-name-tip/module-name-tip';
 
 export const Main = () => {
-  const { editorLanguage, moduleName } = usePlaygroundContext();
+  const {
+    editorLanguage,
+    editorValue,
+    handleEditorValueChange,
+    handleAddTemplate,
+  } = usePlaygroundContext();
 
   return (
     <AppShell.Main>
-      <Flex gap={'lg'} h={'calc(100vh - 112px)'}>
+      <Flex gap={'lg'} h={'calc(100vh - 152px)'}>
         <Flex
           flex={1}
           direction={'column'}
-          style={{ border: '1px solid grey' }}
           justify={'space-between'}
+          gap={'lg'}
         >
           <TemplateSettingsToolbar />
-          <pre>{JSON.stringify(editorLanguage, null, 2)}</pre>
-          <pre>{JSON.stringify(moduleName, null, 2)}</pre>
-          {/* <Flex>
-        <Flex flex={1} direction={'column'}>
-          <Editor
-            // onChange={}
-            height={'calc(100vh - 110px)'}
-            defaultLanguage={editorLanguage?.id}
-            language={editorLanguage?.id}
-            theme='vs-dark'
-            width={'100%'}
-            value={editorValue}
-            onChange={(value) => {
-              console.log('Editor onChange value', value);
-
-              setEditorValue(value ?? '');
-            }}
-            wrapperProps={{}}
-          />
-        </Flex>
-        <Flex flex={1} direction={'column'}>
-          <Flex direction={'column'}>
-            <Code>
-              <Text>copasta.config.json</Text>
-            </Code>
+          <ModuleNameTip />
+          <Flex flex={1}>
             <Editor
-              // onChange={}
-              height={'calc(100vh - 110px)'}
-              defaultLanguage={'json'}
-              theme='vs-dark'
+              height={'100%'}
               width={'100%'}
-              value={JSON.stringify(
-                {
-                  templates: [
-                    {
-                      extension: editorLanguage.id,
-                      content: editorValue,
-                    },
-                  ],
-                },
-                null,
-                2
-              )}
+              language={editorLanguage?.id}
+              theme='vs-dark'
+              value={editorValue}
               onChange={(value) => {
-                console.log('Editor onChange value', value);
-
-                setEditorValue(value ?? '');
+                if (value) handleEditorValueChange(value);
               }}
             />
           </Flex>
-          <Code>
-            <Text>{JSON.stringify(editorValue)}</Text>
-          </Code>
-        </Flex>
-      </Flex> */}
           <Flex align={'flex-end'} justify={'flex-end'}>
-            <Button>Add Template</Button>
+            <Button onClick={handleAddTemplate}>Add Template</Button>
           </Flex>
         </Flex>
-        <JsonPreview />
+        <ConfigPreview />
       </Flex>
     </AppShell.Main>
   );
