@@ -10,3 +10,5 @@ copasta is a CLI tool that helps you create a new boilerplate for your project. 
 
 
 ![copasta logo](./logo.webp)
+
+![image](https://github.com/user-attachments/assets/8821c99d-d9fc-4f38-b913-93dd4ec63a60)
